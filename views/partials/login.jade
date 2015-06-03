@@ -1,0 +1,8 @@
+form#loginForm(method='POST', action='/user/login')
+  .formfield
+    .formfield--prompt Username:
+      input#username(type='text', name='username')
+  .formfield
+    .formfield--prompt Password:
+      input#password(type='password', name='password')
+  input.submitButton(type='submit')

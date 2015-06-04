@@ -5,6 +5,7 @@
 var controllers = angular.module('myApp.controllers', []);
 
 controllers.controller('AppCtrl', function ($scope, $http) {
+/*
     $http({
           method: 'GET',
           url: '/api/user'
@@ -15,4 +16,5 @@ controllers.controller('AppCtrl', function ($scope, $http) {
         error(function (data, status, headers, config) {
           $scope.name = 'Error!';
         });
+*/
   });

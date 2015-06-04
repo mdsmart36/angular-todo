@@ -22,6 +22,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/todo',
       controller: 'TodoCtrl'
     }).
+    when('/list', {
+      templateUrl: 'partials/list',
+      controllers: 'ListCtrl'
+    }).
     otherwise({
       redirectTo: '/'
     });

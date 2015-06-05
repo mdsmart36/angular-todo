@@ -7,8 +7,8 @@
 
 
 .row(ng-show="showLogin")
-  .col-xs-4
-  .col-xs-4
+  .col-xs-2
+  .col-xs-8
     .pannel.pannel-default
       .pannel-body
         h1 Login
@@ -20,12 +20,11 @@
             label(for='password') Password
             input.form-control#password(type='password', name='password', ng-model='user.password', required)
           button.btn.btn-danger(ng-click='login()') Login
-  .col-xs-4
-
+  .col-xs-2
 
 .row(ng-show="showRegister")
-  .col-xs-4
-  .col-xs-4
+  .col-xs-2
+  .col-xs-8
     .pannel.pannel-default
       .pannel-body
         h1 Register
@@ -37,4 +36,4 @@
             label(for='password') Password
             input.form-control#password(type='password', name='password', ng-model='user.password', required, ng-minlength='3')
           button.btn.btn-danger(ng-click='register()', ng-show='userForm.$valid') Register
-  .col-xs-4
+  .col-xs-2

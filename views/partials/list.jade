@@ -1,2 +1,9 @@
-h1(ng-controller='ListCtrl') {{message}}
-
+div(ng-controller='ListCtrl')
+  h1 {{message}}
+  .row(ng-repeat='task in tasks')
+    .col-md-2 
+      p {{task.title}}
+    .col-md-4
+      p {{task.description}}
+    .col-md-4
+    .col-md-2

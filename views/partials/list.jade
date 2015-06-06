@@ -10,6 +10,7 @@ div(ng-controller='ListCtrl')
             th Description
             th Due Date
             th Priority
+            th User
             th
             th
           tr(ng-repeat='task in tasks')
@@ -17,6 +18,7 @@ div(ng-controller='ListCtrl')
             td {{task.description}}
             td {{task.due_date}}
             td {{task.priority}}
+            td {{task.user}}
             td
               button.btn.btn-default.btn-xs.btn-success(type='button', ng-click='edit(task._id)') Edit
             td

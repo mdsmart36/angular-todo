@@ -1,14 +1,13 @@
 controllers.controller('EditCtrl', function ($scope, $rootScope, $http, myService) {
     $scope.message = "Edit a Todo Item";
     console.log('inside editController');
-    //console.log(typeof myService.editTask);
     $scope.task = myService.editTask;
 
-    //console.log($scope.task.title);
+    console.log($scope.task);
 
     $scope.submit = function(){  
       // api call POST to api/tasks
-      $scope.task.user = $rootScope.rootUser;
+      //$scope.task.user = $rootScope.rootUser;
       
       console.log('before PUT call');
       console.log($scope.task);

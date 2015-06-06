@@ -107,30 +107,30 @@ router.post('/', function (req, res, next) {
 
 // Handle a PUT request (update todo item)
 router.put('/', function (req, res, next) {
-  if (req.body._id) {
     Todo.findOne({ _id: req.body._id}, function(err, item) {
       if (err) {
         console.log(err);
       } else {
-        console.log('inside router.PUT');
-        console.log(item);
+        // console.log('trying to update, found this...');
+        // console.log(item);
         var theUser = UserController.getCurrentUser();
+        // item = req.body;
         item.title = req.body.title;
         item.description = req.body.description;
         item.priority = req.body.priority;
         item.due_date = req.body.due_date;
         item.complete = req.body.complete;
         item.user = req.body.user;
-      }
-    }).update(function(err, updateItem) {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log(updateItem);
+
+        // console.log('item to be saved is ...');
+        // console.log(item);
+
+        item.save();
+        // console.log('item has been updated');
         res.status(200).send('SUCCESS');
       }
-    });
-  }
+    })
+
 });
 
 module.exports = router;

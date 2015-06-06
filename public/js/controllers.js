@@ -18,3 +18,7 @@ controllers.controller('AppCtrl', function ($scope, $http) {
         });
 */
   });
+
+controllers.service('myService', function(){
+  this.editTask = {};
+});

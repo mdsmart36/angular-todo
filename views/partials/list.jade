@@ -18,8 +18,8 @@ div(ng-controller='ListCtrl')
             td {{task.due_date}}
             td {{task.priority}}
             td
-              button.btn.btn-default.btn-xs.btn-success(type='button', id='{{task._id}}', ng-click='edit()') Edit
+              button.btn.btn-default.btn-xs.btn-success(type='button', ng-click='edit(task._id)') Edit
             td
-              button.btn.btn-default.btn-xs.btn-danger(type='button', id='{{task._id}}', ng-click='remove(task._id)') Remove
+              button.btn.btn-default.btn-xs.btn-danger(type='button', ng-click='remove(task._id)') Remove
     .col-md-1
   

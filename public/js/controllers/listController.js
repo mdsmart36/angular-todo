@@ -1,4 +1,4 @@
-controllers.controller('ListCtrl', function ($scope, $http) {
+controllers.controller('ListCtrl', function ($scope, $http, $route, $location, myService) {
     $scope.message = "This is my List";
     $scope.tasks = [];
 
@@ -14,8 +14,22 @@ controllers.controller('ListCtrl', function ($scope, $http) {
           console.log('could not get the tasks');
         });
 
-    $scope.edit = function() {
+    $scope.edit = function(id) {
 
+      $http({
+            method: 'GET',
+            url: '/api/tasks/' + id
+          }).
+          success(function (data, status, headers, config) {
+            console.log('inside listController');
+            console.log(data[0]);
+            myService.editTask = data[0];
+            $location.path('/edit');
+
+          }).
+          error(function (data, status, headers, config) {
+            console.log('could not get the tasks');
+          });
     }
 
     $scope.remove = function(id) {
@@ -25,7 +39,8 @@ controllers.controller('ListCtrl', function ($scope, $http) {
       }).
       success(function (data, status, headers, config){
         console.log('item deleted');
-        // refresh the page?
+        $route.reload();
+
       }).
       error(function (data, status, headers, config){
         console.log('item not deleted');

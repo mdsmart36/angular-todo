@@ -26,6 +26,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/list',
       controllers: 'ListCtrl'
     }).
+    when('/edit', {
+      templateUrl: 'partials/edit',
+      controllers: 'EditCtrl'
+    }).
     otherwise({
       redirectTo: '/'
     });

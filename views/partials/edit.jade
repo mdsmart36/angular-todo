@@ -1,0 +1,24 @@
+h1 {{message}}
+.row(ng-controller='EditCtrl')
+  .col-md-1
+  .col-md-10
+    h3 {{message}}
+    form#todoForm
+      input(type='hidden', name='db_id')
+      .form-group
+        label Title:
+        input#todoTitle(type='text', name='title', ng-model='task.title')
+      .form-group
+        label Description:
+        textarea#todoDescription(name='description', ng-model='task.description')
+      .form-group
+        label Priority:
+        input#todoPriority(type='text', name='priority', ng-model='task.priority')
+      .form-group
+        label Complete by:
+        input#todoDuedate(type='text', name='due_date', ng-model='task.due_date')
+      .form-group
+        label Completed:
+        input#todoDone(type='checkbox', name='complete', ng-model='task.complete')
+      button.btn.btn-success.btn-large(ng-click='submit()') Add Todo
+  .col-md-1
